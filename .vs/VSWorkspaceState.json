@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\Navigation",
+    "\\src\\components\\Navigation\\SideDrawer",
+    "\\src\\components\\Navigation\\SideDrawer\\DrawerToggle",
+    "\\src\\components\\UI",
+    "\\src\\components\\UI\\Modal",
+    "\\src\\containers",
+    "\\src\\containers\\PizzaBuilder"
+  ],
+  "SelectedNode": "\\src\\App.js",
+  "PreviewInSolutionExplorer": false
+}
