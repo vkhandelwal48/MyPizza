@@ -3,14 +3,15 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\Navigation",
-    "\\src\\components\\Navigation\\SideDrawer",
-    "\\src\\components\\Navigation\\SideDrawer\\DrawerToggle",
+    "\\src\\components\\Pizza",
+    "\\src\\components\\Pizza\\PizzaIngredients",
     "\\src\\components\\UI",
-    "\\src\\components\\UI\\Modal",
+    "\\src\\components\\UI\\Input",
     "\\src\\containers",
-    "\\src\\containers\\PizzaBuilder"
+    "\\src\\containers\\Checkout",
+    "\\src\\containers\\Checkout\\ContactData",
+    "\\src\\containers\\Orders"
   ],
-  "SelectedNode": "\\src\\App.js",
+  "SelectedNode": "\\src\\components\\UI\\Input\\Input.js",
   "PreviewInSolutionExplorer": false
 }

@@ -4,8 +4,8 @@ import Pizza from '../../components/Pizza/Pizza';
 import BuildControls from '../../components/Pizza/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Pizza/OrderSummary/OrderSummary';
-import axios from '../../axios-oders';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import axios from '../../axios-oders';
 import withErrorHandler from '../../hoc/WithErrorHandler/WithErrorHandler';
 
 const INGREDIENTS_PRICES = {
@@ -94,29 +94,16 @@ class PizzaBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true });
-        //alert('You continue!');
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'Khandu',
-                address: {
-                    street: 'Rajendra Nagar',
-                    pinCode: '243122',
-                    country: 'India'
-                },
-                email: 'vkhandelwal48@gmail.com'
-            },
-            deliveryMethod:'fastest'
+        const queryParams = [];
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
-        axios.post('/order.json', order)
-            .then(response => {
-                this.setState({ loading: false, purchasing: false });
-            })
-            .catch(error => {
-                this.setState({ loading: false, purchasing: false });
-            });
+        queryParams.push('price=' + this.state.totalPrice);
+        const queryString = queryParams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
     }
     render() {
         const disabledInfo = {

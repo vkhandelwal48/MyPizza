@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-const NavigationItem = styled.div`
+const Li = styled.li`
     margin: 10px 0;
     box-sizing:border-box;
     display:block;
@@ -18,15 +19,21 @@ const NavigationItem = styled.div`
     }
 `;
 
-const A = styled.a`
+const StyledLink = styled(NavLink)`
     color:8F5C2C;
     text-decoration:none;
     width:100%;
     box-sizing:border-box;
     display:block;
    
-    &:hover,,&:active{
-        background-color:8F5C2C;
+    &:hover{
+        background-color:#8F5C2C;
+        border-bottom:4px solid #40A4C8;
+        color:white;
+    }
+
+    &:active{
+        background-color:#8F5C2C;
         border-bottom:4px solid #40A4C8;
         color:white;
     }
@@ -44,11 +51,9 @@ const A = styled.a`
 
 const navigationItem = (props) =>
     (
-        <NavigationItem>
-            <li>
-                <A href={props.link}>{props.children}</A>
-            </li>
-        </NavigationItem>
+    <Li>
+        <StyledLink exact={props.exact} to={props.link}>{props.children}</StyledLink>
+    </Li>
     );
 
 export default navigationItem;

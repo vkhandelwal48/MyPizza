@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const NavigationItems = styled.div`
+const Ul = styled.ul`
     padding:0;
     margin:0;
     list-style:none;
@@ -17,12 +17,10 @@ const NavigationItems = styled.div`
 `;
 
 const navigationItems = () => (
-    <NavigationItems>
-        <ul>
-            <NavigationItem link="/">Pizza Builder</NavigationItem>
-            <NavigationItem link="/">Checkout</NavigationItem>
-        </ul>
-    </NavigationItems>
-    );
+        <Ul>
+            <NavigationItem link="/" exact>Pizza Builder</NavigationItem>
+            <NavigationItem link="/orders">Orders</NavigationItem>
+        </Ul>
+);
 
 export default navigationItems;
